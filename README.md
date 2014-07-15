@@ -10,7 +10,7 @@ Installation
 
 Using *pip*:
 
-    pip install -e git+https://github.com/qdqmedia/django-actions.git#egg=django-actions
+    pip install -e git+https://github.com/sharafjaffri/django-actions.git#egg=django-actions
 
 Adding *django-actions* to *INSTALLED_APPS*:
 
@@ -64,7 +64,7 @@ In your **views.py** file:
 
 In your **actions.py** file:
 
-    def disable_services(view, queryset):
+    def disable_services(view, request, queryset):
         queryset.update(disable=True)
         return HttpResponseRedirect('.')
 
