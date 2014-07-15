@@ -48,8 +48,8 @@ class ActionViewMixin(object):
                 except (KeyError, IndexError, ValueError):
                     return HttpResponseForbidden()
 
-                return action_to_execute(self, qs)
+                return action_to_execute(self, request, qs)
         qstring = '?'
         for key, value in request.GET.dict().items():
             qstring = qstring + '&%s=%s' % (key, value)
-        return HttpResponseRedirect('.')
+        return HttpResponseRedirect('./%s' % qstring)
